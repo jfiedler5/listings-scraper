@@ -91,3 +91,18 @@ ROBOTSTXT_OBEY = False
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+DATABASE = {
+    'drivername': 'postgres',
+    'host': 'db',
+    'port': '5432',
+    'username': 'postgres',
+    'password': 'postgres',
+    'database': 'scrapy_db'
+}
+
+ITEM_PIPELINES = {
+   'scraper.pipelines.PostgresPipeline': 300,
+}
+
+LOG_LEVEL = 'INFO'  # or 'WARNING' for even less verbosity
